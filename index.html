@@ -1,0 +1,383 @@
+pak-army-portal/
+│ index.html
+│ letters.html
+│ dsf-updates.html
+│ style.css
+│ script.js
+│ animations.js
+└── assets/
+    ├── images/
+    └── icons/
+    /* style.css - Pakistan Army DSF Portal */
+:root{
+  --green:#0B3D20;
+  --green-dark:#061F12;
+  --gold:#D4AF37;
+  --white:#FFFFFF;
+  --glass: rgba(255,255,255,0.08);
+  --glass-border: rgba(255,255,255,0.18);
+  --shadow: 0 8px 32px rgba(0,0,0,0.25);
+  --radius:16px;
+  --font-heading: "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  color:var(--white);
+  overflow-x:hidden;
+  cursor:none; /* custom cursor */
+}
+
+/* LOADER */
+#loader{
+  position:fixed;inset:0;background:radial-gradient(circle at center,var(--green),#000);
+  display:grid;place-items:center;z-index:9999;transition:opacity .8s ease;
+}
+.loader-content{text-align:center}
+.loader-logo{width:90px;height:90px;border:3px solid var(--gold);border-radius:50%;animation:spin 2s linear infinite;box-shadow:0 0 30px var(--gold)}
+.loader-title{font-size:clamp(1.5rem,4vw,2.5rem);letter-spacing:4px;margin-top:16px;font-weight:700}
+.loader-sub{color:var(--gold);letter-spacing:2px}
+.loader-bar{width:260px;height:4px;background:rgba(255,255,255,0.1);margin:20px auto;border-radius:2px;overflow:hidden}
+.loader-fill{height:100%;width:0;background:var(--gold);transition:width .2s}
+
+/* CUSTOM CURSOR */
+.cursor{position:fixed;width:20px;height:20px;border:2px solid var(--gold);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:transform .1s}
+.cursor-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%)}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(16px);
+  background:var(--glass);
+  border-bottom:1px solid var(--glass-border);
+  display:flex;justify-content:space-between;align-items:center;padding:14px 5%;
+}
+nav .brand{font-weight:800;letter-spacing:2px;color:var(--gold)}
+nav ul{list-style:none;display:flex;gap:24px}
+nav a{color:var(--white);text-decoration:none;font-weight:500;position:relative}
+nav a:after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:.3s}
+nav a:hover:after{width:100%}
+
+/* HERO */
+.hero{
+  min-height:90vh;display:grid;place-items:center;text-align:center;padding:0 5%;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"><rect fill="%23061F12"/><g fill="%230B3D20"><circle cx="200" cy="200" r="80" opacity="0.2"/><circle cx="1400" cy="700" r="120" opacity="0.15"/></g></svg>') center/cover;
+}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:900;letter-spacing:3px}
+.hero p{max-width:700px;margin:16px auto;color:rgba(255,255,255,0.8)}
+.btn{
+  display:inline-block;padding:14px 28px;border-radius:50px;background:linear-gradient(90deg,var(--gold),#f1e08a);
+  color:#000;font-weight:700;text-decoration:none;margin:8px;position:relative;overflow:hidden;box-shadow:0 0 20px rgba(212,175,55,0.4);
+  transition:transform .3s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn.ripple:after{content:'';position:absolute;border-radius:50%;transform:scale(0);background:rgba(255,255,255,0.4);animation:ripple .6s linear}
+
+/* GLASS CARDS */
+.card{
+  background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:.4s;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 0 30px rgba(212,175,55,0.3)}
+
+/* GRID */
+.grid{display:grid;gap:24px}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+/* SECTIONS */
+section{padding:80px 5%}
+.section-title{text-align:center;font-size:2rem;margin-bottom:40px;color:var(--gold)}
+
+/* STATS */
+.stat{text-align:center}
+.stat h3{font-size:2.5rem;color:var(--gold)}
+.stat p{opacity:.8}
+
+/* TIMELINE */
+.timeline{position:relative}
+.timeline:before{content:'';position:absolute;left:50%;top:0;width:2px;height:100%;background:var(--gold)}
+.timeline-item{margin:40px 0;position:relative;width:50%;padding:0 40px}
+.timeline-item:nth-child(odd){left:0;text-align:right}
+.timeline-item:nth-child(even){left:50%}
+
+/* FOOTER */
+footer{background:#000;padding:40px 5%;border-top:1px solid var(--glass-border)}
+footer .disclaimer{font-size:.8rem;opacity:.7;margin-top:16px}
+
+/* SCROLL TO TOP */
+#toTop{position:fixed;right:20px;bottom:20px;width:50px;height:50px;border-radius:50%;background:var(--gold);color:#000;display:grid;place-items:center;opacity:0;pointer-events:none;transition:.3s}
+#toTop.show{opacity:1;pointer-events:auto}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:1s}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{display:none}
+  .timeline:before{left:20px}
+  .timeline-item{width:100%;left:0!important;text-align:left;padding-left:60px}
+  // animations.js
+document.addEventListener('DOMContentLoaded',()=>{
+  // Scroll reveal
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('visible');
+    })
+  },{threshold:0.2});
+  document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+  // Counters
+  document.querySelectorAll('.counter').forEach(counter=>{
+    const update=()=>{
+      const target=+counter.dataset.target;
+      const count=+counter.innerText;
+      const inc=target/100;
+      if(count<target){counter.innerText=Math.ceil(count+inc);requestAnimationFrame(update)}
+      else counter.innerText=target;
+    }
+    io.observe(counter.parentElement);
+    counter.parentElement.addEventListener('transitionend',update,{once:true})
+  });
+
+  // Ripple
+  document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('click',function(e){
+      const circle=document.createElement('span');
+      const d=Math.max(this.clientWidth,this.clientHeight);
+      circle.style.width=circle.style.height=d+'px';
+      circle.style.left=e.clientX - this.offsetLeft - d/2 + 'px';
+      circle.style.top=e.clientY - this.offsetTop - d/2 + 'px';
+      circle.classList.add('ripple');
+      this.appendChild(circle);
+      setTimeout(()=>circle.remove(),600);
+    })
+  })
+});
+        // script.js
+// Loading screen
+let load=0;
+const fill=document.querySelector('.loader-fill');
+const loader=document.getElementById('loader');
+const interval=setInterval(()=>{
+  load+=Math.random()*15;
+  if(load>=100){load=100;clearInterval(interval);setTimeout(()=>loader.style.opacity=0,500);setTimeout(()=>loader.remove(),1200)}
+  fill.style.width=load+'%';
+},200);
+
+// Custom cursor
+const cursor=document.querySelector('.cursor');
+const dot=document.querySelector('.cursor-dot');
+document.addEventListener('mousemove',e=>{
+  cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';
+  dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
+});
+
+// Progress bar
+window.addEventListener('scroll',()=>{
+  const scrolled=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  document.documentElement.style.setProperty('--scroll',scrolled+'%');
+  document.getElementById('toTop').classList.toggle('show',window.scrollY>400);
+});
+document.getElementById('toTop').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakistan Army - DSF Updates Portal</title>
+<meta name="description" content="Unofficial informational portal for Pakistan Army recruitment, DSF updates, test centres and required documents.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor"></div><div class="cursor-dot"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="loader-logo"></div>
+    <div class="loader-title">PAKISTAN ARMY</div>
+    <div class="loader-sub">DSF UPDATES PORTAL</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">PAK ARMY DSF</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="letters.html">Letters</a></li>
+    <li><a href="dsf-updates.html">DSF Updates</a></li>
+    <li><a href="#centres">Centres</a></li>
+    <li><a href="#documents">Documents</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1 class="fade-up">Serve With Honour</h1>
+    <p class="fade-up">Stay updated with latest Pakistan Army recruitment, DSF notifications and selection centre schedules.</p>
+    <a href="#updates" class="btn fade-up">Latest Updates</a>
+    <a href="dsf-updates.html" class="btn fade-up">Apply Info</a>
+  </div>
+</section>
+
+<!-- LATEST UPDATES -->
+<section id="updates">
+  <h2 class="section-title fade-up">Latest Updates</h2>
+  <div class="grid grid-3">
+    <div class="card fade-up"><h3>26A Registration Open</h3><p>Online registration for 26A batch is now active. Check eligibility and deadlines.</p></div>
+    <div class="card fade-up"><h3>25B Letters Dispatched</h3><p>Call letters for 25B have been sent to selected candidates.</p></div>
+    <div class="card fade-up"><h3>New Test Centres</h3><p>Two new selection centres added in South Punjab.</p></div>
+  </div>
+</section>
+
+<!-- STATISTICS -->
+<section>
+  <h2 class="section-title fade-up">By The Numbers</h2>
+  <div class="grid grid-4">
+    <div class="stat card fade-up"><h3 class="counter" data-target="15000">0</h3><p>Applicants 2026</p></div>
+    <div class="stat card fade-up"><h3 class="counter" data-target="12">0</h3><p>Test Centres</p></div>
+    <div class="stat card fade-up"><h3 class="counter" data-target="4">0</h3><p>Selection Phases</p></div>
+    <div class="stat card fade-up"><h3 class="counter" data-target="98">0</h3><p>Success Rate %</p></div>
+  </div>
+</section>
+
+<!-- SELECTION PROCESS -->
+<section>
+  <h2 class="section-title fade-up">Selection Process</h2>
+  <div class="timeline">
+    <div class="timeline-item card fade-up"><h4>1. Registration</h4><p>Online form submission</p></div>
+    <div class="timeline-item card fade-up"><h4>2. Written Test</h4><p>Intelligence + Academic</p></div>
+    <div class="timeline-item card fade-up"><h4>3. Physical + Medical</h4><p>Fitness and medical check</p></div>
+    <div class="timeline-item card fade-up"><h4>4. Interview + Final</h4><p>ISSB and merit list</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title fade-up">Contact</h2>
+  <div class="card fade-up">
+    <p>For informational queries only</p>
+    <a href="https://wa.me/923001234567" class="btn">WhatsApp Us</a>
+  </div>
+  <div class="card fade-up" style="margin-top:20px;height:300px;background:#111;display:grid;place-items:center">
+    Google Map Placeholder
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Quick Links: Home | Letters | DSF Updates | Centres | Documents</p>
+  <p class="disclaimer">Disclaimer: This is an unofficial informational portal. We are not affiliated with Pakistan Army or Government of Pakistan. Always verify from official sources.</p>
+  <p>© 2026 PA DSF Portal</p>
+</footer>
+
+<button id="toTop">↑</button>
+
+<script src="animations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letters - PA DSF Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor"></div><div class="cursor-dot"></div>
+<nav>
+  <div class="brand">PAK ARMY DSF</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="letters.html">Letters</a></li>
+    <li><a href="dsf-updates.html">DSF Updates</a></li>
+  </ul>
+</nav>
+
+<section>
+  <h2 class="section-title fade-up">Recruitment Letters</h2>
+  <input id="search" type="text" placeholder="Search by centre or batch" style="width:100%;padding:12px;border-radius:8px;margin-bottom:20px">
+  <div class="grid grid-3" id="letterGrid">
+    <div class="card fade-up" data-tag="25B Lahore"><h3>25B - Lahore Centre</h3><p>Status: Dispatched</p></div>
+    <div class="card fade-up" data-tag="25B Karachi"><h3>25B - Karachi Centre</h3><p>Status: In Progress</p></div>
+    <div class="card fade-up" data-tag="26A Peshawar"><h3>26A - Peshawar Centre</h3><p>Status: Scheduled</p></div>
+    <!-- Add up to 25B/26A cards -->
+  </div>
+</section>
+
+<footer><p class="disclaimer">Unofficial portal for information only.</p></footer>
+<script src="animations.js"></script>
+<script src="script.js"></script>
+<script>
+document.getElementById('search').oninput=e=>{
+  const q=e.target.value.toLowerCase();
+  document.querySelectorAll('#letterGrid .card').forEach(c=>{
+    c.style.display=c.dataset.tag.toLowerCase().includes(q)?'block':'none';
+  })
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSF Updates - PA DSF Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor"></div><div class="cursor-dot"></div>
+<nav>
+  <div class="brand">PAK ARMY DSF</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="letters.html">Letters</a></li>
+    <li><a href="dsf-updates.html">DSF Updates</a></li>
+  </ul>
+</nav>
+
+<section>
+  <div class="card fade-up" style="text-align:center;background:linear-gradient(90deg,var(--green),#000)">
+    <h2>DSF Registration Schedule 2026</h2>
+  </div>
+</section>
+
+<section id="centres">
+  <h2 class="section-title fade-up">All Test Centres</h2>
+  <div class="grid grid-3">
+    <div class="card fade-up"><h3>Lahore</h3><p>Dates: Aug 10-20</p><p>Districts: Lahore, Kasur, Sheikhupura</p><p>Status: Open</p></div>
+    <div class="card fade-up"><h3>Karachi</h3><p>Dates: Aug 15-25</p><p>Districts: Karachi, Hyderabad</p><p>Status: Open</p></div>
+    <div class="card fade-up"><h3>Rawalpindi</h3><p>Dates: Aug 5-15</p><p>Districts: Rawalpindi, Islamabad</p><p>Status: Open</p></div>
+    <!-- Add more centres -->
+  </div>
+</section>
+
+<section id="documents">
+  <h2 class="section-title fade-up">Required Documents</h2>
+  <div class="grid grid-3">
+    <div class="card fade-up">CNIC / B-Form</div>
+    <div class="card fade-up">Matric + Inter Certificates</div>
+    <div class="card fade-up">Domicile</div>
+    <div class="card fade-up">Passport Photos</div>
+    <div class="card fade-up">Character Certificate</div>
+  </div>
+</section>
+
+<footer><p class="disclaimer">Unofficial portal. Verify with official Army recruitment office.</p></footer>
+<script src="animations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
