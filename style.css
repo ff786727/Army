@@ -1,0 +1,50 @@
+:root{
+  --green: #06361A;
+  --gold: #FFD700;
+  --white: #ffffff;
+  --glow: 0 0 20px var(--gold);
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--green);color:var(--white);overflow-x:hidden;}
+
+/* NAVBAR */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:rgba(0,0,0,0.4);position:fixed;width:100%;z-index:1000;backdrop-filter:blur(10px);}
+.logo{font-family:'Montserrat';font-size:24px;font-weight:900;color:var(--gold);text-shadow:var(--glow);}
+.nav-links{list-style:none;display:flex;gap:30px;}
+.nav-links a{color:var(--white);text-decoration:none;font-weight:600;transition:0.3s;}
+.nav-links a:hover{color:var(--gold);text-shadow:var(--glow);}
+
+/* HERO */
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;
+background:linear-gradient(rgba(6,54,26,0.85), rgba(6,54,26,0.85)), url('army-bg.jpg') center/cover fixed;
+animation: zoomBg 20s infinite alternate;}
+@keyframes zoomBg{from{background-size:100%}to{background-size:110%}}
+.overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle,transparent 20%,var(--green) 100%);}
+.hero-content{z-index:2;animation:fadeUp 1.5s ease;}
+.hero h1{font-family:'Montserrat';font-size:80px;font-weight:900;letter-spacing:3px;}
+.hero h1 span{color:var(--gold);text-shadow:var(--glow);animation:flicker 2s infinite;}
+@keyframes flicker{0%,100%{opacity:1}50%{opacity:0.7}}
+.hero p{font-size:22px;margin:20px 0;color:#eee;}
+.btn{padding:14px 35px;border-radius:50px;text-decoration:none;font-weight:700;margin:10px;display:inline-block;transition:0.4s;}
+.btn-glow{background:var(--gold);color:var(--green);box-shadow:var(--glow);}
+.btn-glow:hover{transform:scale(1.1);box-shadow:0 0 40px var(--gold);}
+.btn-outline{border:2px solid var(--gold);color:var(--gold);}
+.btn-outline:hover{background:var(--gold);color:var(--green);}
+.scroll-down{position:absolute;bottom:30px;font-size:30px;color:var(--gold);animation:bounce 2s infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(15px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+.section-title{text-align:center;font-family:'Montserrat';font-size:45px;margin-bottom:50px;color:var(--gold);text-shadow:var(--glow);}
+.about,.missions,.join{padding:100px 8%;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+.glow-card{background:rgba(255,255,255,0.05);padding:40px;border-radius:20px;text-align:center;border:1px solid rgba(255,215,0,0.2);transition:0.4s;}
+.glow-card:hover{transform:translateY(-15px);box-shadow:var(--glow);border-color:var(--gold);}
+.glow-card i{font-size:50px;color:var(--gold);margin-bottom:20px;}
+.mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;}
+.mission-item{background:linear-gradient(135deg,var(--gold),#ffea80);color:var(--green);padding:30px;border-radius:15px;text-align:center;font-weight:700;font-size:18px;transition:0.4s;}
+.mission-item:hover{transform:scale(1.05) rotate(-2deg);box-shadow:var(--glow);}
+.join{text-align:center;background:rgba(0,0,0,0.3);}
+footer{text-align:center;padding:30px;background:#000;color:#aaa;}
+
+@media(max-width:768px){.hero h1{font-size:45px}.nav-links{display:none}}
