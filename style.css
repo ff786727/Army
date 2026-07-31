@@ -509,3 +509,41 @@ border-radius:50px;
 color:#FFD700;
 
 font
+<!-- NOTIFICATION BAR -->
+<div class="notification-bar">
+  🔥 25B کی رجسٹریشن شروع ہو چکی ہے! 
+  <span class="close-btn">×</span>
+</div>
+
+<!-- SEARCH BOX -->
+<div class="search-container">
+  <input type="text" id="searchBox" placeholder="Search Letters, 25B, 26A, Centre...">
+  <div class="filter-buttons">
+    <button class="active">All</button>
+    <button>25B</button>
+    <button>26A</button>
+  </div>
+</div>
+
+<!-- CARDS GRID -->
+<div class="cards-grid">
+  <div class="letter-card animate-on-scroll">
+    <h3>Letter No: 25B/LHR/001</h3>
+    <p class="center-name">Lahore Centre</p>
+    <p>Status: Test Date Announced</p>
+  </div>
+  
+  <div class="dsf-card animate-on-scroll">
+    <h3>DSF Update</h3>
+    <p>Medical Test Schedule Released</p>
+    <span class="status active">Active</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-card"><h3 class="counter" data-target="15000">0</h3><p>Applications</p></div>
+    <div class="stat-card"><h3 class="counter" data-target="12">0</h3><p>Test Centres</p></div>
+  </div>
+</section>
