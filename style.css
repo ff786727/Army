@@ -527,7 +527,7 @@ color:#FFD700;
 
 /* HERO SECTION BACKGROUND */
 .hero-section{
-    background: linear-gradient(rgba(6,54,26,0.85), rgba(6,54,26,0.85)), url('assets/images/army-bg.jpg');
+    background: linear-gradient(rgba(6,54,26,0.85), rgba(6,54,26,0.85)), url('army-bg.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
