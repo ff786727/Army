@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Pakistan Army - Soldier Recruitment</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  .detail-section { display: none; }
+  .detail-section.active { display: block; animation: fadeIn 0.5s; }
+  @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+  .criteria-list { text-align: left; max-width: 700px; margin: 20px auto; }
+  .criteria-list li { background: rgba(0,0,0,0.2); padding: 12px; margin: 8px 0; border-left: 3px solid var(--gold); border-radius: 5px; }
+  .positions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+</style>
+</head>
+<body style="background: var(--green);">
 
+<header>
+  <nav class="navbar">
+    <div class="logo"><i class="fa-solid fa-shield-halved"></i> PAK ARMY</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" onclick="showSection('soldier')">Soldier</a></li>
+      <li><a href="#" onclick="showSection('dsf')">DSF</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- MAIN JOIN SECTION -->
+<section id="soldier" class="join detail-section active" style="min-height:100vh; padding-top:120px;">
+  <h2 class="section-title">🎖️ Pakistan Army Soldier Recruitment</h2>
+  <p style="text-align:center; font-size:18px; margin-bottom:40px; color:var(--gold);">Serve the Nation. Live with Honor 🇵🇰</p>
+  
+  <!-- Eligibility -->
+  <div class="glow-card" style="max-width:800px; margin:20px auto;">
+    <h3><i class="fa-solid fa-clipboard-check"></i> 1. General Eligibility Criteria</h3>
+    <ul class="criteria-list">
+      <li><b>Age:</b> 17.5 to 23 Years</li>
+      <li><b>Marital Status:</b> Unmarried (or Married/Unmarried male citizens as specified for certain roles)</li>
+      <li><b>Gender:</b> Male</li>
+      <li><b>Minimum Height:</b> 5'6" (167.5 cm)</li>
+      <li><b>Weight:</b> As per Body Mass Index (BMI) standards</li>
+      <li><b>Nationality:</b> Male citizens of Pakistan, Azad Kashmir, and Gilgit-Baltistan</li>
+    </ul>
+  </div>
+
+  <!-- Positions -->
+  <div class="glow-card" style="max-width:1000px; margin:20px auto;">
+    <h3><i class="fa-solid fa-briefcase"></i> 2. Available Positions / Vacancies</h3>
+    <div class="positions-grid">
+      <div class="card"><i class="fa-solid fa-user-shield"></i><h4>Soldier (General Duty - GD)</h4></div>
+      <div class="card"><i class="fa-solid fa-screwdriver-wrench"></i><h4>Technical Soldier</h4></div>
+      <div class="card"><i class="fa-solid fa-handcuffs"></i><h4>Military Police (MP) Soldier</h4></div>
+      <div class="card"><i class="fa-solid fa-truck"></i><h4>Soldier Driver</h4></div>
+      <div class="card"><i class="fa-solid fa-file-lines"></i><h4>Soldier Clerk</h4></div>
+      <div class="card"><i class="fa-solid fa-notes-medical"></i><h4>Nursing Assistant Soldier</h4></div>
+      <div class="card"><i class="fa-solid fa-utensils"></i><h4>Cook / Sanitary Worker</h4></div>
+    </div>
+    <p style="text-align:center; margin-top:20px; color:var(--gold);"><b>Note:</b> All positions offer pension benefits upon completion of service.</p>
+  </div>
+
+  <!-- Documents -->
+  <div class="glow-card" style="max-width:800px; margin:20px auto;">
+    <h3><i class="fa-solid fa-folder-open"></i> 3. Required Documents for Registration</h3>
+    <ul class="criteria-list">
+      <li><b>Educational Certificates:</b> Original + 2 attested photocopies</li>
+      <li><b>CNIC / Smart Card:</b> Original Computerized National Identity Card</li>
+      <li><b>Father’s CNIC:</b> Attested photocopy</li>
+      <li><b>Domicile:</b> Domicile Certificate / State Subject Certificate</li>
+      <li><b>Photographs:</b> 4 recent passport-size photographs</li>
+      <li><b>Attestation:</b> All documents attested by Government Gazetted Officer</li>
+    </ul>
+  </div>
+
+  <!-- Buttons -->
+  <div style="text-align:center; margin-top:40px;">
+    <a href="#" class="btn btn-glow"><i class="fa-solid fa-paper-plane"></i> Apply Online</a>
+    <a href="#" onclick="showSection('dsf')" class="btn btn-outline"><i class="fa-solid fa-bolt"></i> DSF Details</a>
+    <a href="index.html" class="btn btn-outline">Back to Home</a>
+  </div>
+</section>
+
+
+<!-- DSF SECTION - KHALI RAKHA HAI ABHI -->
+<section id="dsf" class="join detail-section" style="min-height:100vh; padding-top:120px;">
+  <h2 class="section-title">⚡ DSF - Detail</h2>
+  <div class="glow-card" style="max-width:800px; margin:20px auto;">
+    <h3>DSF Information</h3>
+    <p>Yahan aap DSF ki detail baad me add karein gay.</p>
+    <p>Abi ye section khali hai.</p>
+    <br>
+    <a href="#" onclick="showSection('soldier')" class="btn btn-outline">Back to Soldier Recruitment</a>
+  </div>
+</section>
+
+
+<footer><p>© 2026 Pakistan Army. Proud Defenders 🇵🇰</p></footer>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.detail-section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
