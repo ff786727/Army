@@ -1,82 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - Pakistan Army</title>
+<title>About - Pakistan Army</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body { text-align: right; }
+  .leader-card { text-align: center; }
+</style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="navbar">
-    <div class="logo"><i class="fa-solid fa-shield-halved"></i> PAK ARMY</div>
-    <ul class="nav-links">
+<header class="navbar">
+  <div class="logo"><i class="fa-solid fa-shield-halved"></i> PAK ARMY</div>
+  <nav>
+    <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="index.html#missions">Missions</a></li>
-      <li><a href="index.html#join">Join Us</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="missions.html">Missions</a></li>
+      <li><a href="join.html">Join Us</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- ABOUT HERO -->
-<section class="hero" style="min-height: 50vh;">
-  <div class="overlay"></div>
-  <div class="hero-content">
-    <h1>ABOUT <span>PAKISTAN ARMY</span></h1>
-    <p>"Imaan, Taqwa, Jihad Fi Sabeelillah"</p>
-  </div>
+<section class="hero-small">
+  <h1>About Pakistan Army</h1>
+  <p>Iman, Taqwa, Jihad Fi Sabeelillah</p>
 </section>
 
-<!-- LEADERSHIP SECTION -->
-<section class="leadership" style="padding:80px 20px; text-align:center; background:#001a0f;">
-  <h2 class="section-title">LEADERSHIP</h2>
+<section class="about-section">
+  <h2 class="section-title glow">LEADERSHIP</h2>
   
-  <div class="glow-card" style="max-width:450px; margin:40px auto; padding:40px;">
-    <img src="leader.jpg" alt="Leader" style="width:180px; height:180px; border-radius:50%; border:5px solid #FFD700; object-fit:cover; margin-bottom:25px; box-shadow:0 0 20px #FFD700;">
-    <h3 style="color:#FFD700; font-size:1.8rem; margin-bottom:8px;">Mr. Qalab Hassan Wattoo</h3>
-<p style="color:#ccc; font-size:1.1rem; margin-bottom:20px;">LEADER - PAKISTAN ARMY</p>
-    <p style="text-align:left; line-height:1.8; font-size:1rem;">
-      Yahan apna message likhen. Jaise: "Main Pakistan Army ki khidmat ko apna fakhar samajhta hun. Hamara mission watan ki hifazat aur qaum ki khidmat hai. Allah hamara madadgar ho."
+  <div class="leader-card">
+    <img src="leader.jpg" alt="Mr. Qalab Hassan Wattoo">
+    <h3>Mr. Qalab Hassan Wattoo</h3>
+    <p class="role">LEADER - PAKISTAN ARMY</p>
+    <p style="text-align:center; line-height:1.8; font-size:1rem; margin-top:15px;">
+      <b>Pakistan Army Duniya ki Number 1 Fauj Hai.</b><br><br>
+      Pakistan Army sirf ek fauj ka naam nahi, ye hamare imaan, ghairat aur watan se mohabbat ki nishani hai. Hamare jawan din raat sarhadon par kharay hokar hamari hifazat karte hain. Inki qurbani, bahaduri aur professionalism ki misaal poori duniya me nahi milti. Hum fakhar se kehte hain ke Pakistan Army best hai aur hamesha number 1 rahegi. <b>Pakistan Zindabad! Pakistan Army Paindabad!</b>
     </p>
   </div>
 </section>
 
-<!-- PAKISTAN ARMY DETAILS -->
-<section class="army-details" style="padding:80px 20px;">
-  <h2 class="section-title">PAKISTAN ARMY</h2>
-  <div class="glow-card" style="max-width:1000px; margin:0 auto; padding:50px; text-align:left;">
-    
-    <h3><i class="fa-solid fa-book" style="color:#FFD700;"></i> History</h3>
-    <p>Pakistan Army 1947 me wajood me aayi. Tab se ab tak hamari Army ne 1965, 1971 ki jangon aur Dushman ke khilaf jung me be-misaal qurbani di hai. Hamari Army dunya ki behtareen professional forces me shumar hoti hai.</p>
-    <br>
-    
-    <h3><i class="fa-solid fa-bullseye" style="color:#FFD700;"></i> Our Mission</h3>
-    <p>Pakistan ki sarhadon ki hifazat, qomi salamti ko yaqeeni banana, aur qaum ki har mushkil me madad karna hamara mission hai.</p>
-    <br>
-    
-    <h3><i class="fa-solid fa-star" style="color:#FFD700;"></i> Core Values</h3>
-    <p><b>Imaan:</b> Allah par mukammal bharosa <br>
-       <b>Taqwa:</b> Allah ka khof <br>
-       <b>Jihad Fi Sabeelillah:</b> Allah ki raah me jihad</p>
-    <br>
+<section class="about-section" style="background:#0a2e1a;">
+  <h2 class="section-title glow">PAKISTAN ARMY</h2>
+  
+  <div class="info-grid">
+    <div class="info-card">
+      <h3><i class="fa-solid fa-book" style="color:#FFD700;"></i> History</h3>
+      <p><b>Founded:</b> 14 August 1947<br>
+      <b>Country:</b> Pakistan<br>
+      Pakistan Army 1947 me wajood me aayi. Tab se ab tak hamari Army ne 1965, 1971 ki jangon aur dushman ke khilaf be-misaal qurbani di hai. 560,000 active-duty aur 565,000 reserve personnel ke saath ye duniya ki behtareen professional forces me shumar hoti hai. <b>GHQ: Rawalpindi, Punjab</b></p>
+    </div>
 
-    <h3><i class="fa-solid fa-message" style="color:#FFD700;"></i> Message from COAS</h3>
-    <p>"Pakistan Army hamesha qaum ki umeedon par poora utregi. Ham watan ke har dushman ka muqabla karne ke liye tayyar hain." </p>
-  </div>
+    <div class="info-card">
+      <h3><i class="fa-solid fa-bullseye" style="color:#FFD700;"></i> Our Mission</h3>
+      <p>Pakistan ki sarhadon ki hifazat, qomi salamti ko yaqeeni banana, aur qaum ki har mushkil me madad karna hamara mission hai. <br><b>Motto:</b> Iman, Taqwa, Jihad Fi Sabeelillah <br><b>Colours:</b> Green and White <br><b>Anniversary:</b> Defence Day - 6 September</p>
+    </div>
 
-  <div style="text-align:center; margin-top:40px;">
-    <a href="index.html" class="btn btn-glow"><i class="fa-solid fa-house"></i> Back to Home</a>
+    <div class="info-card">
+      <h3><i class="fa-solid fa-star" style="color:#FFD700;"></i> Command</h3>
+      <p><b>Commander-in-Chief:</b> President Asif Ali Zardari <br>
+      <b>Chief of Army Staff:</b> F.M Asim Munir <br>
+      <b>Quartermaster General:</b> Lt. Gen. Muhammad Hassan Khattak <br>
+      <b>Adjutant General:</b> Lt. Gen. Azhar Waqas <br>
+      <b>Website:</b> pakistanarmy.gov.pk</p>
+    </div>
+
+    <div class="info-card">
+      <h3><i class="fa-solid fa-plane" style="color:#FFD700;"></i> Equipment</h3>
+      <p><b>Attack Helicopters:</b> Z-10, Mi-35M Hind, AH-1F Cobra<br>
+      <b>Drones:</b> NESCOM Burraq, CASC Rainbow<br>
+      <b>Role:</b> Land Warfare <br>
+      <b>Part of:</b> Pakistan Armed Forces</p>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Pakistan Army. Proud Defenders of the Nation 🇵🇰</p>
+  <p>© 2026 Pakistan Army Fan Page | Pakistan Zindabad 🇵🇰</p>
 </footer>
 
 </body>
