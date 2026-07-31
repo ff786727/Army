@@ -47,7 +47,7 @@ animation: zoomBg 20s infinite alternate;}
 .join{text-align:center;background:rgba(0,0,0,0.3);}
 footer{text-align:center;padding:30px;background:#000;color:#aaa;}
 
-@media(max-width:768px){.hero h1{font-size:45px}.nav-links{display:none}}
+@media(max-width:768px){.hero h1{font-size:45px}}
 .btn-later {
     background: transparent;
     border: 2px solid var(--gold);
@@ -63,4 +63,52 @@ footer{text-align:center;padding:30px;background:#000;color:#aaa;}
     background: var(--gold);
     color: var(--dark-bg);
     box-shadow: 0 0 20px var(--gold);
+}
+/* ========== MOBILE RESPONSIVE FIX ========== */
+@media (max-width: 768px) {
+  
+  /* Navbar Mobile */
+  .navbar {
+    flex-direction: column;
+    padding: 15px 10px;
+  }
+  .logo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row; /* mobile me bhi line me rahen */
+    flex-wrap: wrap; /* jagah kam ho to neeche aa jaye */
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+  }
+  .nav-links li {
+    margin: 0;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  /* Hero Section Mobile */
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* Buttons Mobile */
+  .hero-btns {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Cards Mobile */
+  .glow-card {
+    padding: 25px 20px !important;
+    margin: 20px 10px !important;
+  }
 }
