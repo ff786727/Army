@@ -48,3 +48,19 @@ animation: zoomBg 20s infinite alternate;}
 footer{text-align:center;padding:30px;background:#000;color:#aaa;}
 
 @media(max-width:768px){.hero h1{font-size:45px}.nav-links{display:none}}
+.btn-later {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 10px; 
+}
+
+.btn-later:hover {
+    background: var(--gold);
+    color: var(--dark-bg);
+    box-shadow: 0 0 20px var(--gold);
+}
