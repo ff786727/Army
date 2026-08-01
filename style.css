@@ -198,3 +198,46 @@ footer{text-align:center;padding:30px;background:#000;color:#aaa;}
 }
 .wars { padding: 80px 20px; text-align: center; background: rgba(0,0,0,0.3); }
 .wars .section-title { color: #FFD700; text-shadow: 0 0 15px #FFD700; font-size: 2.5rem; margin-bottom: 40px; }
+.pagination {
+  text-align: center;
+  margin: 30px 0;
+}
+.pagination a {
+  color: #000;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  margin: 0 3px;
+  text-decoration: none;
+  display: inline-block;
+  background: #f1f1f1;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.pagination a.active {
+  background: #0a6e3f; /* Hara color */
+  color: white;
+  border: 1px solid #0a6e3f;
+}
+.pagination a:hover {
+  background: #ddd;
+}
+
+.go-page {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.go-page input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+}
+.go-page button {
+  padding: 8px 15px;
+  background: #0a6e3f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
