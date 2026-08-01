@@ -160,3 +160,19 @@ footer{text-align:center;padding:30px;background:#000;color:#aaa;}
   box-shadow: var(--glow);
   color: var(--gold); /* Hover pe text golden */
     }
+.video-section{
+  padding:60px 20px;
+  text-align:center;
+  background:#000;
+}
+.video-section h2{
+  font-family:'Montserrat';
+  font-size:32px;
+  margin-bottom:20px;
+  color:#FFFFFF;
+}
+.video-section video{
+  width:100%;
+  max-width:900px;
+  border-radius:12px;
+}
