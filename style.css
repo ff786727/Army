@@ -196,7 +196,7 @@ footer{text-align:center;padding:30px;background:#000;color:#aaa;}
  80%  { background-image: url('bg5.jpg'); }
  100% { background-image: url('bg1.jpg'); }
 }
-.wars { padding: 80px 20px; text-align: center; background: rgba(0,0,0,0.3); }
+.wars { padding: 80px 20px; text-align: center; background: rgba(0,0,0,0.8); }
 .wars .section-title { color: #FFD700; text-shadow: 0 0 15px #FFD700; font-size: 2.5rem; margin-bottom: 40px; }
 .pagination {
   text-align: center;
