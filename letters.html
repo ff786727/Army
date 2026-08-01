@@ -129,8 +129,11 @@ function checkStatus() {
   <!-- UPAR WALI PICTURE -->
  <img src="recruitment.jpg" alt="Pakistan Army Recruitment" class="top-image">
     <div class="status-box">
-      <h3>Status Check</h3>
-      ...
+  <h3>Status Check</h3>
+  <p>Apna 13 digit CNIC number likhen</p>
+  <input type="text" id="cnicInput" maxlength="13" placeholder="Sirf 13 number likhen">
+  <button onclick="checkStatus()">Search</button>
+  <p id="result" style="margin-top:15px; font-weight:bold;"></p>
     </div>
   <!-- MUKAMMAL DETAIL -->
   <div class="detail-box">
