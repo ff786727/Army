@@ -1,3 +1,29 @@
+/* ========== VIP HD EFFECT ========== */
+:root {
+  --gold: #FFD700;
+  --dark-green: #001a0f;
+  --glow: 0 0 15px var(--gold), 0 0 30px var(--gold);
+}
+
+/* VIP MOTA FONT + GOLDEN GLOW */
+h1, h2, .logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  text-shadow: var(--glow);
+  color: var(--gold);
+}
+
+/* BUTTON GLOW HOVER */
+.btn-glow {
+  box-shadow: 0 0 10px var(--gold);
+  transition: all 0.3s ease;
+}
+.btn-glow:hover {
+  transform: scale(1.05);
+  box-shadow: var(--glow);
+  background: var(--gold);
+  color: var(--dark-green);
+}
 :root{
   --green: #06361A;
   --gold: #FFD700;
