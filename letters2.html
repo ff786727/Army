@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FARAH NAZ | Professional CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- PDF DOWNLOAD LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      background: #f0f2f5; 
+      color: #333; 
+      line-height: 1.7; 
+    }
+    
+    .container { max-width: 1000px; margin: 30px auto; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden; }
+    
+    /* HEADER */
+    .cv-header { 
+      background: linear-gradient(135deg, #004aad 0%, #0066ff 100%); 
+      color: white; 
+      padding: 40px; 
+      display: flex; 
+      align-items: center; 
+      gap: 30px; 
+      flex-wrap: wrap; 
+    }
+    .cv-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+    .contact-info p { margin: 5px 0; font-size: 15px; }
+    .contact-info b { font-weight: 600; }
+    
+    /* BODY */
+    .cv-body { display: flex; flex-wrap: wrap; }
+    .left-col { flex: 1; min-width: 300px; background: #f8f9fa; padding: 35px; border-right: 1px solid #e0e0e0; }
+    .right-col { flex: 2; min-width: 400px; padding: 35px; }
+    
+    .section { margin-bottom: 30px; }
+    .section-title { 
+      font-size: 18px; 
+      font-weight: 700; 
+      color: #004aad; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      border-bottom: 2px solid #004aad; 
+      padding-bottom: 8px; 
+      margin-bottom: 15px; 
+    }
+    
+    /* SKILLS */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-item { 
+      background: #e6f0ff; 
+      color: #004aad; 
+      padding: 8px 14px; 
+      border-radius: 20px; 
+      font-size: 13px; 
+      font-weight: 500; 
+    }
+    
+    /* EXPERIENCE & EDUCATION */
+    .item { margin-bottom: 20px; }
+    .item h4 { font-size: 16px; font-weight: 600; color: #222; }
+    .item .sub { font-size: 14px; color: #004aad; font-weight: 500; }
+    .item .date { font-size: 13px; color: #777; margin-bottom: 8px; }
+    .item ul { padding-left: 20px; }
+    .item li { margin: 6px 0; font-size: 14px; }
+    
+    /* SUMMARY */
+    .summary-text { font-size: 15px; color: #444; text-align: justify; }
+    .highlight { color: #004aad; font-weight: 600; }
+    
+    /* BOTTOM BUTTONS */
+    .bottom-buttons { 
+      padding: 25px 35px; 
+      background: #f8f9fa; 
+      border-top: 1px solid #e0e0e0; 
+      display: flex; 
+      gap: 15px; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+    }
+    .btn { 
+      padding: 12px 24px; 
+      background: #004aad; 
+      color: white; 
+      text-decoration: none; 
+      border: none; 
+      border-radius: 8px; 
+      font-weight: 600; 
+      transition: 0.3s; 
+      cursor: pointer; 
+      font-size: 15px; 
+      font-family: 'Poppins', sans-serif; 
+    }
+    .btn:hover { background: #0066ff; transform: translateY(-2px); }
+    
+    /* MOBILE */
+    @media(max-width: 900px){
+      .cv-header { text-align: center; justify-content: center; }
+      .cv-body { flex-direction: column; }
+      .left-col { border-right: none; border-bottom: 1px solid #e0e0e0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="cv-content">
+    <!-- HEADER -->
+    <div class="cv-header">
+      <div>
+        <h1>FARAH NAZ</h1>
+        <div class="contact-info">
+          <p><b>Phone:</b> +92-327-1100673</p>
+          <p><b>Email:</b> mazharw700@gmail.com</p>
+          <p><b>Location:</b> Mianwali, Punjab, Pakistan</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="cv-body">
+      <!-- LEFT COLUMN -->
+      <div class="left-col">
+        <div class="section">
+          <h3 class="section-title">Key Skills</h3>
+          <div class="skills-grid">
+            <span class="skill-item">MS Word & MS Excel</span>
+            <span class="skill-item">Communication Skills</span>
+            <span class="skill-item">Record Keeping</span>
+            <span class="skill-item">Time Management</span>
+            <span class="skill-item">Classroom Management</span>
+            <span class="skill-item">Curriculum Planning</span>
+            <span class="skill-item">Student Assessment</span>
+            <span class="skill-item">Data Entry</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Education</h3>
+          <div class="item">
+            <h4>B.Com - Bachelor of Commerce</h4>
+            <p class="date">2026 | Allama Iqbal Open University</p>
+          </div>
+          <div class="item">
+            <h4>F.Sc - Faculty of Science</h4>
+            <p class="date">2021 | BISE, Sargodha</p>
+          </div>
+          <div class="item">
+            <h4>Matriculation</h4>
+            <p class="date">2018 | BISE, Sargodha</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Languages</h3>
+          <p>Urdu - Native</p>
+          <p>English - Professional</p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Personal Info</h3>
+          <p><b>Father Name:</b> Khizar Hayat</p>
+          <p><b>Nationality:</b> Pakistani</p>
+          <p><b>Marital Status:</b> Un-Married</p>
+          <p><b>Religion:</b> Islam</p>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="right-col">
+        <div class="section">
+          <h3 class="section-title">Professional Summary</h3>
+          <p class="summary-text">
+            <span class="highlight">Dedicated and Results-Driven Educator</span> with <span class="highlight">5 years of teaching experience</span> at Govt Primary School Chah Miana Mianwali. Proven expertise in <span class="highlight">curriculum development, student engagement, classroom management, and academic performance improvement</span>. Passionate about fostering a positive learning environment and nurturing student potential through innovative teaching methodologies. <span class="highlight">B.Com graduate</span> with strong <span class="highlight">communication, organizational, and administrative skills</span>. Seeking to leverage educational background and experience to contribute effectively in <span class="highlight">Front Desk / Intake Management</span> roles within a professional organization.
+          </p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Work Experience</h3>
+          <div class="item">
+            <h4>Teacher</h4>
+            <p class="sub">Govt Primary School Chah Miana Mianwali</p>
+            <p class="date">Experience: 5 Years</p>
+            <ul>
+              <li>Delivered high-quality instruction to primary level students with focus on <span class="highlight">academic excellence and character building</span>.</li>
+              <li>Managed classroom of 30+ students, ensuring <span class="highlight">discipline, engagement, and effective learning outcomes</span>.</li>
+              <li>Developed and implemented lesson plans, <span class="highlight">assessments, and progress reports</span> in accordance with school curriculum.</li>
+              <li>Maintained accurate <span class="highlight">student records, attendance, and administrative documentation</span> with 100% accuracy.</li>
+              <li>Collaborated with parents and school administration to support <span class="highlight">student development and school activities</span>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">Career Objective</h3>
+          <p>To secure a challenging role as a <span class="highlight">Front Desk Officer, Receptionist, or Intake Management Executive</span> in a reputable organization. Aim to utilize my 5 years of professional experience, strong communication skills, and B.Com qualification to improve operational efficiency and provide exceptional administrative support while growing professionally.</p>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">References</h3>
+          <p>Will Be Provided On Your Demand.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BUTTONS -->
+    <div class="bottom-buttons">
+      <a href="index.html" class="btn">← Back to Home</a>
+      <button onclick="downloadPDF()" class="btn">⬇ Download PDF</button>
+    </div>
+
+  </div>
+
+  <!-- PDF DOWNLOAD SCRIPT -->
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById('cv-content');
+      const opt = {
+        margin:       0.3,
+        filename:     'FARAH_NAZ_CV.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 3, useCORS: true },
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
+
+</body>
+  </html>
