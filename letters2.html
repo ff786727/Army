@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QALAB HASAN | Professional CV</title>
+  <title>FARAH NAZ | Professional CV</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- PDF DOWNLOAD LIBRARY -->
@@ -20,36 +20,20 @@
     
     .container { max-width: 1000px; margin: 30px auto; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden; }
     
-    .btn-back { display: inline-block; margin: 20px 0 0 30px; padding: 10px 20px; background: #004aad; color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: 0.3s; }
-    .btn-back:hover { background: #003080; }
-    
     /* HEADER */
     .cv-header { 
       background: linear-gradient(135deg, #004aad 0%, #0066ff 100%); 
       color: white; 
       padding: 40px; 
-      display: flex; 
-      align-items: center; 
-      gap: 30px; 
-      flex-wrap: wrap; 
+      text-align: center;
     }
-    .cv-header img { 
-      width: 150px; 
-      height: 150px; 
-      border-radius: 50%; 
-      border: 4px solid white; 
-      object-fit: cover; 
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
-    }
-    .cv-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 5px; }
-    .cv-header h2 { font-size: 18px; font-weight: 400; opacity: 0.9; margin-bottom: 15px; }
-    .contact-info p { margin: 5px 0; font-size: 15px; }
+    .cv-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+    .contact-info { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; font-size: 15px; }
+    .contact-info p { margin: 5px 0; }
     .contact-info b { font-weight: 600; }
     
     /* BODY */
-    .cv-body { display: flex; flex-wrap: wrap; }
-    .left-col { flex: 1; min-width: 300px; background: #f8f9fa; padding: 35px; border-right: 1px solid #e0e0e0; }
-    .right-col { flex: 2; min-width: 400px; padding: 35px; }
+    .cv-body { padding: 35px; }
     
     .section { margin-bottom: 30px; }
     .section-title { 
@@ -58,60 +42,67 @@
       color: #004aad; 
       text-transform: uppercase; 
       letter-spacing: 1px; 
-      border-bottom: 2px solid #004aad; 
-      padding-bottom: 8px; 
+      background: #004aad;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
       margin-bottom: 15px; 
     }
     
+    /* INFO GRID */
+    .info-grid { display: grid; grid-template-columns: 150px 1fr; gap: 10px 20px; }
+    .info-grid b { color: #004aad; }
+    
+    /* TABLE */
+    .edu-table { width: 100%; border-collapse: collapse; }
+    .edu-table th { background: #004aad; color: white; padding: 12px; text-align: left; font-weight: 600; }
+    .edu-table td { padding: 12px; border-bottom: 1px solid #e0e0e0; }
+    .edu-table tr:nth-child(even) { background: #f8f9fa; }
+    
+    /* LIST */
+    .custom-list { list-style: none; padding-left: 0; }
+    .custom-list li { padding: 8px 0 8px 25px; position: relative; }
+    .custom-list li:before { content: "➤"; color: #004aad; position: absolute; left: 0; font-weight: bold; }
+    
     /* SKILLS */
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
     .skill-item { 
       background: #e6f0ff; 
       color: #004aad; 
-      padding: 8px 14px; 
+      padding: 8px 16px; 
       border-radius: 20px; 
-      font-size: 13px; 
+      font-size: 14px; 
       font-weight: 500; 
     }
-    
-    /* EXPERIENCE & EDUCATION */
-    .item { margin-bottom: 20px; }
-    .item h4 { font-size: 16px; font-weight: 600; color: #222; }
-    .item .sub { font-size: 14px; color: #004aad; font-weight: 500; }
-    .item .date { font-size: 13px; color: #777; margin-bottom: 8px; }
-    .item ul { padding-left: 20px; }
-    .item li { margin: 6px 0; font-size: 14px; }
     
     /* SUMMARY */
     .summary-text { font-size: 15px; color: #444; text-align: justify; }
     .highlight { color: #004aad; font-weight: 600; }
     
-    /* DOWNLOAD BTN */
-    .btn-download { 
-      display: inline-block; 
-      width: 100%; 
-      text-align: center; 
-      padding: 14px; 
+    /* BOTTOM BUTTONS */
+    .bottom-buttons { 
+      padding: 25px 35px; 
+      background: #f8f9fa; 
+      border-top: 1px solid #e0e0e0; 
+      display: flex; 
+      gap: 15px; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+    }
+    .btn { 
+      padding: 12px 24px; 
       background: #004aad; 
       color: white; 
       text-decoration: none; 
-      border: none;
+      border: none; 
       border-radius: 8px; 
       font-weight: 600; 
-      margin-top: 10px; 
       transition: 0.3s; 
-      cursor: pointer;
-      font-size: 15px;
-      font-family: 'Poppins', sans-serif;
+      cursor: pointer; 
+      font-size: 15px; 
+      font-family: 'Poppins', sans-serif; 
     }
-    .btn-download:hover { background: #0066ff; transform: translateY(-2px); }
-    
-    /* MOBILE */
-    @media(max-width: 900px){
-      .cv-header { text-align: center; justify-content: center; }
-      .cv-body { flex-direction: column; }
-      .left-col { border-right: none; border-bottom: 1px solid #e0e0e0; }
-    }
+    .btn:hover { background: #0066ff; transform: translateY(-2px); }
   </style>
 </head>
 <body>
@@ -119,98 +110,104 @@
   <div class="container" id="cv-content">
     <!-- HEADER -->
     <div class="cv-header">
-      <img src="Latter2-1.jpg" alt="QALAB HASAN">
-      <div>
-        <h1>QALAB HASAN</h1>
-        <div class="contact-info">
-          <p><b>Phone:</b> 03019564244</p>
-          <p><b>Email:</b> Hqilbe@gmail.com</p>
-          <p><b>Location:</b> Islamabad, Pakistan</p>
-        </div>
+      <h1>FARAH NAZ</h1>
+      <div class="contact-info">
+        <p><b>Email:</b> mazharw700@gmail.com</p>
+        <p><b>Phone:</b> +92-327-1100673</p>
       </div>
     </div>
 
     <!-- BODY -->
     <div class="cv-body">
-      <!-- LEFT COLUMN -->
-      <div class="left-col">
-        <div class="section">
-          <h3 class="section-title">Key Skills</h3>
-          <div class="skills-grid">
-            <span class="skill-item">Front Desk Operations</span>
-            <span class="skill-item">Patient Relations</span>
-            <span class="skill-item">Admission & Registration</span>
-            <span class="skill-item">CRM & HMS Software</span>
-            <span class="skill-item">Basic Accounting</span>
-            <span class="skill-item">Data Entry 50+ WPM</span>
-            <span class="skill-item">MS Office Suite</span>
-            <span class="skill-item">Telephone Handling</span>
-            <span class="skill-item">Record Management</span>
-            <span class="skill-item">Customer Service</span>
-          </div>
-        </div>
+      
+      <div class="section">
+        <h3 class="section-title">Career Objective</h3>
+        <p class="summary-text">
+          To secure a position in the organization that offers challenge and opportunity for my <span class="highlight">career development</span> and at the same time serve the organization to the best of my capabilities. Seeking a role as <span class="highlight">Front Desk / Intake Management Officer</span> to utilize my communication and administrative skills.
+        </p>
+      </div>
 
-        <div class="section">
-          <h3 class="section-title">Education</h3>
-          <div class="item">
-            <h4>D.Com - Diploma in Commerce</h4>
-            <p class="date">2025 | Percentage: 61%</p>
-          </div>
-        </div>
-
-        <div class="section">
-          <h3 class="section-title">Languages</h3>
-          <p>Urdu - Native</p>
-          <p>English - Professional</p>
-        </div>
-
-        <div class="section">
-          <h3 class="section-title">Core Strengths</h3>
-          <p>Professionalism, Communication, Quick Learner, Punctual, Team Player, Problem Solving, Work Under Pressure</p>
+      <div class="section">
+        <h3 class="section-title">Personal Information</h3>
+        <div class="info-grid">
+          <b>Father Name:</b> <span>Khizar Hayat</span>
+          <b>Nationality:</b> <span>Pakistani</span>
+          <b>Marital Status:</b> <span>Un-Married</span>
+          <b>Gender:</b> <span>Female</span>
+          <b>Religion:</b> <span>Islam</span>
+          <b>CNIC No:</b> <span>38302-7294156-8</span>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN -->
-      <div class="right-col">
-        <div class="section">
-          <h3 class="section-title">Professional Summary</h3>
-          <p class="summary-text">
-            <span class="highlight">Results-driven Front Desk Professional</span> with 1 year of experience in hospital administration at <span class="highlight">Rehman Hospital</span>. Proven expertise in <span class="highlight">patient reception, admission processes, appointment scheduling, and data management</span>. Skilled in maintaining accurate records, handling high-volume phone calls, and ensuring excellent <span class="highlight">customer service</span>. Proficient in <span class="highlight">MS Office, basic accounting, and data entry</span> with a typing speed of 50+ WPM. D.Com graduate seeking to leverage strong <span class="highlight">communication and organizational skills</span> to contribute to a dynamic administrative team.
-          </p>
-        </div>
+      <div class="section">
+        <h3 class="section-title">Professional Education</h3>
+        <table class="edu-table">
+          <tr>
+            <th>Certificate/Degree</th>
+            <th>Passing Year</th>
+            <th>Institution</th>
+          </tr>
+          <tr>
+            <td>Matriculation</td>
+            <td>2018</td>
+            <td>BISE, Sargodha</td>
+          </tr>
+          <tr>
+            <td>F.Sc</td>
+            <td>2021</td>
+            <td>BISE, Sargodha</td>
+          </tr>
+          <tr>
+            <td>B.Com</td>
+            <td>2026</td>
+            <td>Allama Iqbal Open University</td>
+          </tr>
+        </table>
+      </div>
 
-        <div class="section">
-          <h3 class="section-title">Work Experience</h3>
-          <div class="item">
-            <h4>Front Desk Officer</h4>
-            <p class="sub">Rehman Hospital</p>
-            <p class="date">Experience: 1 Year</p>
-            <ul>
-              <li>Managed daily <span class="highlight">front desk operations</span> for 200+ patients with professionalism and efficiency.</li>
-              <li>Executed <span class="highlight">patient admission, registration, and discharge</span> procedures accurately.</li>
-              <li>Handled inbound/outbound calls, scheduled appointments, and resolved patient inquiries.</li>
-              <li>Maintained digital and physical <span class="highlight">records, documents, and administrative data</span> with 99% accuracy.</li>
-              <li>Coordinated with medical and billing departments to ensure smooth patient flow.</li>
-            </ul>
-          </div>
-        </div>
+      <div class="section">
+        <h3 class="section-title">Professional Experience</h3>
+        <ul class="custom-list">
+          <li><b>05 Years Experience</b> as Teacher at Govt Primary School Chah Miana Mianwali.</li>
+          <li>Skilled in <span class="highlight">Record Keeping, Data Entry, Communication</span> and dealing with parents and administration.</li>
+          <li>Looking to apply organizational and management skills in <span class="highlight">Front Desk / Intake Management</span> role.</li>
+        </ul>
+      </div>
 
-        <div class="section">
-          <h3 class="section-title">Career Objective</h3>
-          <p>To secure a challenging role as a <span class="highlight">Receptionist, Admission Officer, or Front Desk Manager</span> in a reputable organization. Aim to utilize my experience in hospital administration, accounting knowledge, and computer skills to improve operational efficiency and provide exceptional service while growing professionally.</p>
-        </div>
-
-        <div class="section">
-          <h3 class="section-title">References</h3>
-          <p>Available upon request.</p>
+      <div class="section">
+        <h3 class="section-title">Key Skills</h3>
+        <div class="skills-grid">
+          <span class="skill-item">MS Word & MS Excel</span>
+          <span class="skill-item">Good Communication Skills</span>
+          <span class="skill-item">Record Keeping</span>
+          <span class="skill-item">Time Management</span>
+          <span class="skill-item">Patient Dealing</span>
+          <span class="skill-item">Telephone Handling</span>
+          <span class="skill-item">Data Entry</span>
         </div>
       </div>
+
+      <div class="section">
+        <h3 class="section-title">Languages</h3>
+        <ul class="custom-list">
+          <li>Urdu</li>
+          <li>English</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3 class="section-title">Reference</h3>
+        <ul class="custom-list">
+          <li>Will Be Provided On Your Demand.</li>
+        </ul>
+      </div>
+
     </div>
 
     <!-- BOTTOM BUTTONS -->
-    <div style="padding: 25px 35px; background: #f8f9fa; border-top: 1px solid #e0e0e0; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-      <a href="index.html" class="btn-download" style="width: auto;">← Back to Home</a>
-      <button onclick="downloadPDF()" class="btn-download" style="width: auto;">⬇ Download PDF</button>
+    <div class="bottom-buttons">
+      <a href="index.html" class="btn">← Back to Home</a>
+      <button onclick="downloadPDF()" class="btn">⬇ Download PDF</button>
     </div>
 
   </div>
@@ -221,7 +218,7 @@
       const element = document.getElementById('cv-content');
       const opt = {
         margin:       0.3,
-        filename:     'QALAB_HASAN_CV.pdf',
+        filename:     'FARAH_NAZ_CV.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 3, useCORS: true },
         jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
