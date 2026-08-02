@@ -20,10 +20,6 @@
     
     .container { max-width: 1000px; margin: 30px auto; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden; }
     
-    .top-buttons { padding: 20px 0 0 30px; display: flex; gap: 15px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 10px 20px; background: #004aad; color: white; text-decoration: none; border: none; border-radius: 8px; font-weight: 500; transition: 0.3s; cursor: pointer; font-size: 15px; font-family: 'Poppins', sans-serif; }
-    .btn:hover { background: #003080; transform: translateY(-2px); }
-    
     /* HEADER */
     .cv-header { 
       background: linear-gradient(135deg, #004aad 0%, #0066ff 100%); 
@@ -43,7 +39,6 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
     }
     .cv-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 5px; }
-    .cv-header h2 { font-size: 18px; font-weight: 400; opacity: 0.9; margin-bottom: 15px; }
     .contact-info p { margin: 5px 0; font-size: 15px; }
     .contact-info b { font-weight: 600; }
     
@@ -87,38 +82,47 @@
     .summary-text { font-size: 15px; color: #444; text-align: justify; }
     .highlight { color: #004aad; font-weight: 600; }
     
+    /* BOTTOM BUTTONS */
+    .bottom-buttons { 
+      padding: 25px 35px; 
+      background: #f8f9fa; 
+      border-top: 1px solid #e0e0e0; 
+      display: flex; 
+      gap: 15px; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+    }
+    .btn { 
+      padding: 12px 24px; 
+      background: #004aad; 
+      color: white; 
+      text-decoration: none; 
+      border: none; 
+      border-radius: 8px; 
+      font-weight: 600; 
+      transition: 0.3s; 
+      cursor: pointer; 
+      font-size: 15px; 
+      font-family: 'Poppins', sans-serif; 
+    }
+    .btn:hover { background: #0066ff; transform: translateY(-2px); }
+    
     /* MOBILE */
     @media(max-width: 900px){
       .cv-header { text-align: center; justify-content: center; }
       .cv-body { flex-direction: column; }
       .left-col { border-right: none; border-bottom: 1px solid #e0e0e0; }
-      .top-buttons { justify-content: center; padding: 20px; }
-    }
-    
-    /* PRINT KE LIYE */
-    @media print {
-      .top-buttons { display: none; }
-      body { background: white; }
-      .container { box-shadow: none; margin: 0; }
     }
   </style>
 </head>
 <body>
 
   <div class="container" id="cv-content">
-    
-    <!-- TOP BUTTONS -->
-    <div class="top-buttons">
-      <a href="index.html" class="btn">← Back to Home</a>
-      <button onclick="downloadPDF()" class="btn">⬇ Download PDF</button>
-    </div>
-
     <!-- HEADER -->
     <div class="cv-header">
       <img src="Latter2-1.jpg" alt="QALAB HASAN">
       <div>
         <h1>QALAB HASAN</h1>
-        <h2>Front Desk Officer | D.Com Graduate</h2>
         <div class="contact-info">
           <p><b>Phone:</b> 03019564244</p>
           <p><b>Email:</b> Hqilbe@gmail.com</p>
@@ -196,6 +200,13 @@
         </div>
       </div>
     </div>
+
+    <!-- BOTTOM BUTTONS -->
+    <div class="bottom-buttons">
+      <a href="index.html" class="btn">← Back to Home</a>
+      <button onclick="downloadPDF()" class="btn">⬇ Download PDF</button>
+    </div>
+
   </div>
 
   <!-- PDF DOWNLOAD SCRIPT -->
