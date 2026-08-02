@@ -274,3 +274,111 @@ footer{text-align:center;padding:30px;background:#000;color:#aaa;}
 }
 .status-box input { padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 5px; }
 .status-box button { padding: 10px 20px; background: #0a6e3f; color: white; border: none; border-radius: 5px; cursor: pointer; margin-left: 10px; }
+/* ===== VIP UPGRADE CSS ===== */
+
+/* 1. Background Animation */
+body {
+  background: linear-gradient(-45deg, #0a3d0a, #1e5e1e, #2a7a2a, #0a3d0a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+@keyframes gradientBG {
+ 0% { background-position: 0% 50%; }
+ 50% { background-position: 100% 50%; }
+ 100% { background-position: 0% 50%; }
+}
+
+/* 2. Main CV Card Effect */
+.cv-wrapper {
+  transition: all 0.4s ease;
+}
+.cv-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+}
+
+/* 3. Header VIP Glass Effect */
+.cv-header {
+  background: linear-gradient(135deg, #0a3d0a 0%, #1e5e1e 100%);
+  position: relative;
+  overflow: hidden;
+}
+.cv-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+  transform: rotate(30deg);
+}
+
+/* 4. Picture Hover Effect */
+.cv-header img {
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 0 rgba(255,255,255,0.4);
+}
+.cv-header img:hover {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* 5. Skill Tags VIP Style */
+.skill-tag {
+  background: linear-gradient(135deg, #e8f5e8, #d4eed4);
+  border: 1px solid #0a3d0a;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.skill-tag:hover {
+  background: #0a3d0a;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(10,61,10,0.3);
+}
+
+/* 6. Section Box Style */
+.cv-section {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 15px;
+  border-left: 4px solid #0a3d0a;
+  transition: all 0.3s ease;
+}
+.cv-section:hover {
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transform: translateX(5px);
+}
+
+/* 7. Button VIP Glow */
+.btn-download, .btn-back {
+  background: linear-gradient(135deg, #0a3d0a, #1e5e1e);
+  box-shadow: 0 4px 15px rgba(10,61,10,0.3);
+  transition: all 0.3s ease;
+}
+.btn-download:hover, .btn-back:hover {
+  background: linear-gradient(135deg, #1e5e1e, #2a7a2a);
+  box-shadow: 0 6px 20px rgba(10,61,10,0.5);
+  transform: translateY(-3px);
+}
+
+/* 8. Heading Underline Animation */
+.cv-section h3 {
+  position: relative;
+  display: inline-block;
+}
+.cv-section h3::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: #0a3d0a;
+  transition: width 0.4s ease;
+}
+.cv-section:hover h3::after {
+  width: 100%;
+}
